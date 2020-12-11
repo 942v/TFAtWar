@@ -15,6 +15,9 @@
 		27E7C2762583B2A90022CFAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E7C2742583B2A90022CFAF /* LaunchScreen.storyboard */; };
 		27E7C2812583B2A90022CFAF /* TFAtWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C2802583B2A90022CFAF /* TFAtWarTests.swift */; };
 		27E7C28C2583B2A90022CFAF /* TFAtWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C28B2583B2A90022CFAF /* TFAtWarUITests.swift */; };
+		B9909EBF33132A4158956831 /* Pods_TFAtWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93291BBF9E344E9F99427B /* Pods_TFAtWar.framework */; };
+		D4A1D70F1EAC417CF1A96B99 /* Pods_TFAtWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D1C734CBEC3A973032FF1A /* Pods_TFAtWarTests.framework */; };
+		E048D4324657B9DA88BE5F0A /* Pods_TFAtWar_TFAtWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C85FC0237FC58A4759DC8DD /* Pods_TFAtWar_TFAtWarUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E7C2DD69B59D6C827F70CA /* Pods-TFAtWarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWarTests.release.xcconfig"; path = "Target Support Files/Pods-TFAtWarTests/Pods-TFAtWarTests.release.xcconfig"; sourceTree = "<group>"; };
+		099152DD46B8056997D90C8A /* Pods-TFAtWar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWar.debug.xcconfig"; path = "Target Support Files/Pods-TFAtWar/Pods-TFAtWar.debug.xcconfig"; sourceTree = "<group>"; };
+		0C85FC0237FC58A4759DC8DD /* Pods_TFAtWar_TFAtWarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFAtWar_TFAtWarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E7C2662583B2A80022CFAF /* TFAtWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFAtWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E7C2692583B2A80022CFAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E7C26B2583B2A80022CFAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		27E7C2872583B2A90022CFAF /* TFAtWarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFAtWarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E7C28B2583B2A90022CFAF /* TFAtWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFAtWarUITests.swift; sourceTree = "<group>"; };
 		27E7C28D2583B2A90022CFAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32F332E6E9839E122A322CEF /* Pods-TFAtWarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWarTests.debug.xcconfig"; path = "Target Support Files/Pods-TFAtWarTests/Pods-TFAtWarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FE58E44BCC00421D324C76E /* Pods-TFAtWar-TFAtWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWar-TFAtWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFAtWar-TFAtWarUITests/Pods-TFAtWar-TFAtWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		72D1C734CBEC3A973032FF1A /* Pods_TFAtWarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFAtWarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8351DEA280A1C7725C249F88 /* Pods-TFAtWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWar.release.xcconfig"; path = "Target Support Files/Pods-TFAtWar/Pods-TFAtWar.release.xcconfig"; sourceTree = "<group>"; };
+		97D01E4449DE9EF64B71FC57 /* Pods-TFAtWar-TFAtWarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWar-TFAtWarUITests.release.xcconfig"; path = "Target Support Files/Pods-TFAtWar-TFAtWarUITests/Pods-TFAtWar-TFAtWarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BE93291BBF9E344E9F99427B /* Pods_TFAtWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFAtWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9909EBF33132A4158956831 /* Pods_TFAtWar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A1D70F1EAC417CF1A96B99 /* Pods_TFAtWarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E048D4324657B9DA88BE5F0A /* Pods_TFAtWar_TFAtWarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				27E7C27F2583B2A90022CFAF /* TFAtWarTests */,
 				27E7C28A2583B2A90022CFAF /* TFAtWarUITests */,
 				27E7C2672583B2A80022CFAF /* Products */,
+				5529B028CC779642E5EE7BF7 /* Pods */,
+				5E5A8FB38D03AA115718B3FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = TFAtWarUITests;
 			sourceTree = "<group>";
 		};
+		5529B028CC779642E5EE7BF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				099152DD46B8056997D90C8A /* Pods-TFAtWar.debug.xcconfig */,
+				8351DEA280A1C7725C249F88 /* Pods-TFAtWar.release.xcconfig */,
+				3FE58E44BCC00421D324C76E /* Pods-TFAtWar-TFAtWarUITests.debug.xcconfig */,
+				97D01E4449DE9EF64B71FC57 /* Pods-TFAtWar-TFAtWarUITests.release.xcconfig */,
+				32F332E6E9839E122A322CEF /* Pods-TFAtWarTests.debug.xcconfig */,
+				01E7C2DD69B59D6C827F70CA /* Pods-TFAtWarTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E5A8FB38D03AA115718B3FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE93291BBF9E344E9F99427B /* Pods_TFAtWar.framework */,
+				0C85FC0237FC58A4759DC8DD /* Pods_TFAtWar_TFAtWarUITests.framework */,
+				72D1C734CBEC3A973032FF1A /* Pods_TFAtWarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27E7C2902583B2A90022CFAF /* Build configuration list for PBXNativeTarget "TFAtWar" */;
 			buildPhases = (
+				6EC201E79A51A007D6F6E0A0 /* [CP] Check Pods Manifest.lock */,
 				27E7C2622583B2A80022CFAF /* Sources */,
 				27E7C2632583B2A80022CFAF /* Frameworks */,
 				27E7C2642583B2A80022CFAF /* Resources */,
@@ -152,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27E7C2932583B2A90022CFAF /* Build configuration list for PBXNativeTarget "TFAtWarTests" */;
 			buildPhases = (
+				A8E2617F146B1847D9DFA35C /* [CP] Check Pods Manifest.lock */,
 				27E7C2782583B2A90022CFAF /* Sources */,
 				27E7C2792583B2A90022CFAF /* Frameworks */,
 				27E7C27A2583B2A90022CFAF /* Resources */,
@@ -170,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27E7C2962583B2A90022CFAF /* Build configuration list for PBXNativeTarget "TFAtWarUITests" */;
 			buildPhases = (
+				84F692100151D3F207B541D4 /* [CP] Check Pods Manifest.lock */,
 				27E7C2832583B2A90022CFAF /* Sources */,
 				27E7C2842583B2A90022CFAF /* Frameworks */,
 				27E7C2852583B2A90022CFAF /* Resources */,
@@ -190,8 +233,10 @@
 		27E7C25E2583B2A80022CFAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					27E7C2652583B2A80022CFAF = {
 						CreatedOnToolsVersion = 12.2;
@@ -252,6 +297,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EC201E79A51A007D6F6E0A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFAtWar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F692100151D3F207B541D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFAtWar-TFAtWarUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8E2617F146B1847D9DFA35C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFAtWarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27E7C2622583B2A80022CFAF /* Sources */ = {
@@ -366,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -433,6 +547,7 @@
 		};
 		27E7C2912583B2A90022CFAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 099152DD46B8056997D90C8A /* Pods-TFAtWar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +567,7 @@
 		};
 		27E7C2922583B2A90022CFAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8351DEA280A1C7725C249F88 /* Pods-TFAtWar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +587,7 @@
 		};
 		27E7C2942583B2A90022CFAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32F332E6E9839E122A322CEF /* Pods-TFAtWarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +610,7 @@
 		};
 		27E7C2952583B2A90022CFAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E7C2DD69B59D6C827F70CA /* Pods-TFAtWarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +633,7 @@
 		};
 		27E7C2972583B2A90022CFAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FE58E44BCC00421D324C76E /* Pods-TFAtWar-TFAtWarUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +654,7 @@
 		};
 		27E7C2982583B2A90022CFAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97D01E4449DE9EF64B71FC57 /* Pods-TFAtWar-TFAtWarUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

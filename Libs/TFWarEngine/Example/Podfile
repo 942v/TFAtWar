@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'TFWarEngine_Example' do
+  pod 'TFWarEngine', :path => '../'
+
+  target 'TFWarEngine_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '10.0'
+
+target 'TFAtWar' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks! :linkage => :static
+
+  pod 'TFNetworking', :path => "../Libs/TFNetworking", :preserve_pod_file_structure => true
+  pod 'TFWarEngine', :path => "../Libs/TFWarEngine", :preserve_pod_file_structure => true
+
+  # Pods for TFAtWar
+
+  target 'TFAtWarTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TFAtWarUITests' do
+    # Pods for testing
+  end
+
+end
