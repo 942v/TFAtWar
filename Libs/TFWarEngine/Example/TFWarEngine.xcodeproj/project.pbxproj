@@ -41,12 +41,12 @@
 		607FACE51AFB9204008FA782 /* TFWarEngine_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFWarEngine_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		800A8F531266796D7A499B74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		800A8F531266796D7A499B74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		84013167691C9FEBE699B5F9 /* Pods-TFWarEngine_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFWarEngine_Example.release.xcconfig"; path = "Target Support Files/Pods-TFWarEngine_Example/Pods-TFWarEngine_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BA983CFD132E28143C82FE3C /* Pods-TFWarEngine_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFWarEngine_Tests.release.xcconfig"; path = "Target Support Files/Pods-TFWarEngine_Tests/Pods-TFWarEngine_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D82BA4ABA3F0C177A7354C51 /* Pods-TFWarEngine_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFWarEngine_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TFWarEngine_Tests/Pods-TFWarEngine_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		EB8D89241376B5EDE25EB1A5 /* TFWarEngine.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TFWarEngine.podspec; path = ../TFWarEngine.podspec; sourceTree = "<group>"; };
-		F92BD103F31CEAC2E47491CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EB8D89241376B5EDE25EB1A5 /* TFWarEngine.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TFWarEngine.podspec; path = ../TFWarEngine.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F92BD103F31CEAC2E47491CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,6 @@
 				D82BA4ABA3F0C177A7354C51 /* Pods-TFWarEngine_Tests.debug.xcconfig */,
 				BA983CFD132E28143C82FE3C /* Pods-TFWarEngine_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

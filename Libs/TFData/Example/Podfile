@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'TFData_Example' do
+  pod 'TFData', :path => '../'
+
+  target 'TFData_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

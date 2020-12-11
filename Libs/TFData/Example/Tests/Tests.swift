@@ -1,5 +1,5 @@
 import XCTest
-import TFNetworking
+import TFData
 
 class Tests: XCTestCase {
     
