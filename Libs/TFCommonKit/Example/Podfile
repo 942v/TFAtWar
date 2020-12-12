@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'TFCommonKit_Example' do
+  pod 'TFCommonKit', :path => '../'
+  
+  pod 'TFData', :path => '../../TFData/'
+
+  target 'TFCommonKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

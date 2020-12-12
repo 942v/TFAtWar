@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		27E7C26A2583B2A80022CFAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C2692583B2A80022CFAF /* AppDelegate.swift */; };
-		27E7C26C2583B2A80022CFAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C26B2583B2A80022CFAF /* SceneDelegate.swift */; };
 		27E7C26E2583B2A80022CFAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C26D2583B2A80022CFAF /* ViewController.swift */; };
-		27E7C2712583B2A80022CFAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E7C26F2583B2A80022CFAF /* Main.storyboard */; };
 		27E7C2732583B2A90022CFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E7C2722583B2A90022CFAF /* Assets.xcassets */; };
 		27E7C2762583B2A90022CFAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E7C2742583B2A90022CFAF /* LaunchScreen.storyboard */; };
 		27E7C2812583B2A90022CFAF /* TFAtWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C2802583B2A90022CFAF /* TFAtWarTests.swift */; };
@@ -43,9 +41,7 @@
 		0C85FC0237FC58A4759DC8DD /* Pods_TFAtWar_TFAtWarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFAtWar_TFAtWarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E7C2662583B2A80022CFAF /* TFAtWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFAtWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E7C2692583B2A80022CFAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27E7C26B2583B2A80022CFAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		27E7C26D2583B2A80022CFAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		27E7C2702583B2A80022CFAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27E7C2722583B2A90022CFAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E7C2752583B2A90022CFAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27E7C2772583B2A90022CFAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,9 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				27E7C2692583B2A80022CFAF /* AppDelegate.swift */,
-				27E7C26B2583B2A80022CFAF /* SceneDelegate.swift */,
 				27E7C26D2583B2A80022CFAF /* ViewController.swift */,
-				27E7C26F2583B2A80022CFAF /* Main.storyboard */,
 				27E7C2722583B2A90022CFAF /* Assets.xcassets */,
 				27E7C2742583B2A90022CFAF /* LaunchScreen.storyboard */,
 				27E7C2772583B2A90022CFAF /* Info.plist */,
@@ -179,6 +173,7 @@
 				27E7C2622583B2A80022CFAF /* Sources */,
 				27E7C2632583B2A80022CFAF /* Frameworks */,
 				27E7C2642583B2A80022CFAF /* Resources */,
+				BD427A2E51D2050129D4CFD5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +211,7 @@
 				27E7C2832583B2A90022CFAF /* Sources */,
 				27E7C2842583B2A90022CFAF /* Frameworks */,
 				27E7C2852583B2A90022CFAF /* Resources */,
+				4B6E75ED63F0C38C9680A7A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,7 +274,6 @@
 			files = (
 				27E7C2762583B2A90022CFAF /* LaunchScreen.storyboard in Resources */,
 				27E7C2732583B2A90022CFAF /* Assets.xcassets in Resources */,
-				27E7C2712583B2A80022CFAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +294,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4B6E75ED63F0C38C9680A7A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFAtWar-TFAtWarUITests/Pods-TFAtWar-TFAtWarUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFAtWar-TFAtWarUITests/Pods-TFAtWar-TFAtWarUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFAtWar-TFAtWarUITests/Pods-TFAtWar-TFAtWarUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6EC201E79A51A007D6F6E0A0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +377,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BD427A2E51D2050129D4CFD5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFAtWar/Pods-TFAtWar-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFAtWar/Pods-TFAtWar-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFAtWar/Pods-TFAtWar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,7 +403,6 @@
 			files = (
 				27E7C26E2583B2A80022CFAF /* ViewController.swift in Sources */,
 				27E7C26A2583B2A80022CFAF /* AppDelegate.swift in Sources */,
-				27E7C26C2583B2A80022CFAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,14 +438,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		27E7C26F2583B2A80022CFAF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27E7C2702583B2A80022CFAF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		27E7C2742583B2A90022CFAF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

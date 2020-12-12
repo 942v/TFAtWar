@@ -11,15 +11,19 @@ import PromiseKit
 // The idea of this class is to be the only gateway to access data, it can be via a local data store or fetching from API
 public class TransformersDataRepository {
     
+    let transformersDataStore: TransformersDataStoreProtocol
     let transformersDataRemoteAPI: TransformersDataRemoteAPIProtocol
     
-    public init(transformersDataRemoteAPI: TransformersDataRemoteAPIProtocol) {
+    public init(transformersDataStore: TransformersDataStoreProtocol,
+                transformersDataRemoteAPI: TransformersDataRemoteAPIProtocol) {
+        self.transformersDataStore = transformersDataStore
         self.transformersDataRemoteAPI = transformersDataRemoteAPI
-        // Here we could inject a data store like core data or use UserDefaults to store the downloaded data.
     }
 }
 
 extension TransformersDataRepository: TransformersDataRepositoryProtocol {
+    
+    
     public func create(_ request: TransformerRequest) -> Promise<TransformerData> {
         
         return Promise<TransformerData> { seal in
@@ -85,9 +89,15 @@ private extension TransformersDataRepository {
             if transformersDataRemoteAPI.hasToken() {
                 seal.fulfill_()
             }else{
+                
                 firstly {
-                    transformersDataRemoteAPI.getAuthorizationToken()
+                    transformersDataStore.storedToken()
+                }.recover { _ in
+                    self.transformersDataRemoteAPI.getAuthorizationToken()
+                }.then {
+                    self.transformersDataStore.store(token: $0)
                 }.done {
+                    print("Token: \($0)")
                     self.transformersDataRemoteAPI.set(authorizationToken: $0)
                     seal.fulfill_()
                 }.catch {
