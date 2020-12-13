@@ -20,6 +20,7 @@ class ListRootTableViewCell: UITableViewCell {
     @IBOutlet weak var courageLabel: UILabel!
     @IBOutlet weak var firepowerLabel: UILabel!
     @IBOutlet weak var skillLabel: UILabel!
+    @IBOutlet weak var overallRatingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +38,7 @@ class ListRootTableViewCell: UITableViewCell {
         courageLabel.text = String(transformer.courage)
         firepowerLabel.text = String(transformer.firepower)
         skillLabel.text = String(transformer.skill)
+        overallRatingLabel.text = String(transformer.overallRating)
     }
 
 }

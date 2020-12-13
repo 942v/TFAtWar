@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="nAL-02-0at">
-                            <rect key="frame" x="0.0" y="214" width="414" height="0.0"/>
+                            <rect key="frame" x="0.0" y="228.5" width="414" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="m7u-Oj-hlX" customClass="ListRootTableViewCell" customModule="TFiOSKit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="158"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="172.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m7u-Oj-hlX" id="9h6-eK-9cH">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="172.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oYC-iD-Qfr">
@@ -37,7 +37,7 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ddV-Ek-STU">
-                                            <rect key="frame" x="88" y="11" width="310" height="131"/>
+                                            <rect key="frame" x="88" y="11" width="310" height="145.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wvf-W3-SCE">
                                                     <rect key="frame" x="0.0" y="0.0" width="310" height="14.5"/>
@@ -192,6 +192,23 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EBZ-IM-FLo">
+                                                    <rect key="frame" x="0.0" y="131" width="310" height="14.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="Overall rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-oX-xIl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdx-6G-piA">
+                                                            <rect key="frame" x="80" y="0.0" width="230" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -211,6 +228,7 @@
                                     <outlet property="iconImageView" destination="oYC-iD-Qfr" id="1Lw-Gv-PNO"/>
                                     <outlet property="intelligenceLabel" destination="3ZE-3l-hGZ" id="ItV-Ff-wJU"/>
                                     <outlet property="nameLabel" destination="rSM-kg-T8a" id="noc-gL-ZL8"/>
+                                    <outlet property="overallRatingLabel" destination="Gdx-6G-piA" id="Su3-fb-ze7"/>
                                     <outlet property="rankLabel" destination="cgR-Dz-Wdo" id="3ZJ-Hb-JhN"/>
                                     <outlet property="skillLabel" destination="qI0-zV-prR" id="aXj-Od-M4v"/>
                                     <outlet property="speedLabel" destination="UIJ-sN-ohz" id="q4m-dk-DnI"/>

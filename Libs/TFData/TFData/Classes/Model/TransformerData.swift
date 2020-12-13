@@ -27,6 +27,9 @@ public struct TransformerData {
     public let skill: Int
     public let team: TransformerTeam
     public let teamIcon: URL
+    public var overallRating: Int {
+        strength + intelligence + speed + endurance + firepower
+    }
     
     private enum CodingKeys: String, CodingKey {
         case id, name, strength, intelligence, speed, endurance, rank, courage, firepower, skill, team
