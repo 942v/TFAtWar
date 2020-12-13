@@ -12,6 +12,7 @@ public class ListViewModel {
     
     // MARK: - Properties
     private unowned let transformerDataRepository: TransformersDataRepositoryProtocol
+    private unowned let showAddScreenResponder: ShowAddScreenResponder
     
     // MARK: State
     private let viewSubject = BehaviorSubject<ListView>(value: .loading)
@@ -22,8 +23,10 @@ public class ListViewModel {
     public let transformersResults = BehaviorSubject<[TransformerData]>(value: [])
     
     // MARK: - Init
-    public init(transformerDataRepository: TransformersDataRepositoryProtocol) {
+    public init(transformerDataRepository: TransformersDataRepositoryProtocol,
+                showAddScreenResponder: ShowAddScreenResponder) {
         self.transformerDataRepository = transformerDataRepository
+        self.showAddScreenResponder = showAddScreenResponder
     }
 }
 
@@ -61,6 +64,19 @@ extension ListViewModel {
                     let errorMessage = ErrorMessage.init(title: "Error!", message: error.localizedDescription)
                     self?.showError(error: errorMessage)
                 }
+        } catch {
+            fatalError("Error reading value")
+        }
+    }
+    
+    public func showAddTransformer() {
+        showAddScreenResponder.showAddScreen(transformer: nil)
+    }
+    
+    public func didSelectRow(at indexPath: IndexPath) {
+        do {
+            let transformer = try transformersResults.value()[indexPath.row]
+            showAddScreenResponder.showAddScreen(transformer: transformer)
         } catch {
             fatalError("Error reading value")
         }

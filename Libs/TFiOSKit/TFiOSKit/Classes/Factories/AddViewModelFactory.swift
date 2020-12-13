@@ -6,8 +6,9 @@
 //
 
 import TFCommonKit
+import TFData
 
 public protocol AddViewModelFactory {
   
-  func makeAddViewModel() -> AddViewModel
+    func makeAddViewModel(transformer: TransformerData?) -> AddViewModel
 }

@@ -12,6 +12,7 @@ public class AddViewModel {
     
     // MARK: - Properties
     private unowned let transformerDataRepository: TransformersDataRepositoryProtocol
+    private let transformer: TransformerData?
     
     // MARK: State
     private let viewSubject = BehaviorSubject<AddView>(value: .idle)
@@ -20,7 +21,9 @@ public class AddViewModel {
     }
     
     // MARK: - Init
-    public init(transformerDataRepository: TransformersDataRepositoryProtocol) {
+    public init(transformerDataRepository: TransformersDataRepositoryProtocol,
+                transformer: TransformerData?) {
         self.transformerDataRepository = transformerDataRepository
+        self.transformer = transformer
     }
 }

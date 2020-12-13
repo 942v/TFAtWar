@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import TFData
 import TFCommonKit
 import RxSwift
 
-public typealias AddViewControllerFactory = () ->  AddViewController
+public typealias AddViewControllerFactory = (TransformerData?) ->  AddViewController
 
 public class MainNavigationController: UINavigationController {
     
@@ -79,8 +80,8 @@ extension MainNavigationController {
         switch view {
         case .list:
             presentListTableViewController()
-        case .add:
-            presentAddViewController()
+        case .add(let transformer):
+            presentAddViewController(transformer)
         }
     }
     
@@ -88,8 +89,8 @@ extension MainNavigationController {
         pushViewController(listTableViewController, animated: false)
     }
     
-    func presentAddViewController() {
-        let addViewControllerToPresent = makeAddViewController()
+    func presentAddViewController(_ transformer: TransformerData?) {
+        let addViewControllerToPresent = makeAddViewController(transformer)
         
         pushViewController(addViewControllerToPresent, animated: true)
     }
@@ -140,7 +141,7 @@ private extension MainNavigationController {
       case is ListTableViewController:
         return .list
       case is AddViewController:
-        return .add
+        return .add(transformer: nil)
       default:
         assertionFailure("Encountered unexpected child view controller type in OnboardingViewController")
         return nil

@@ -45,6 +45,6 @@ extension ListRootNavigationItem {
     }
     
     @IBAction func doAddAction(_ sender: Any) {
-//        viewModel.didFinishAddingRadios()
+        viewModel.showAddTransformer()
     }
 }

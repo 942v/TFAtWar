@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import TFData
 
 public typealias MainNavigationAction = NavigationAction<MainNavigationView>
 
@@ -30,5 +31,12 @@ public class MainNavigationViewModel {
 extension MainNavigationViewModel {
     public func uiPresented(mainNavigationView: MainNavigationView) {
         _navigationAction.onNext(.presented(view: mainNavigationView))
+    }
+}
+
+// MARK: - Responders
+extension MainNavigationViewModel: ShowAddScreenResponder {
+    public func showAddScreen(transformer: TransformerData?) {
+        _navigationAction.onNext(.present(view: .add(transformer: transformer)))
     }
 }

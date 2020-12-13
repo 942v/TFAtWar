@@ -7,6 +7,7 @@
 
 import UIKit
 import TFCommonKit
+import TFData
 
 public class AddViewController: UIViewController {
     
@@ -14,8 +15,8 @@ public class AddViewController: UIViewController {
     private var viewModel: AddViewModel!
     
     // MARK: - Injection of dependencies
-    public func inject(viewModelFactory: AddViewModelFactory) {
-        self.viewModel = viewModelFactory.makeAddViewModel()
+    public func inject(viewModel: AddViewModel) {
+        self.viewModel = viewModel
     }
     
     public override func viewDidLoad() {
