@@ -43,4 +43,6 @@ TODO: Add long description of the pod here.
   s.dependency 'TFCommonKit'
   s.dependency 'PATools'
   s.dependency 'RxSwift'
+  s.dependency 'RxCocoa'
+  s.dependency 'Kingfisher'
 end

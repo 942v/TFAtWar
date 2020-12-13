@@ -19,8 +19,63 @@ public class ListViewModel {
         return viewSubject.asObservable()
     }
     
+    public let transformersResults = BehaviorSubject<[TransformerData]>(value: [])
+    
     // MARK: - Init
     public init(transformerDataRepository: TransformersDataRepositoryProtocol) {
         self.transformerDataRepository = transformerDataRepository
+    }
+}
+
+// MARK: - Actions
+extension ListViewModel {
+    
+    public func title() -> String {
+        return "Transformers"
+    }
+    
+    public func loadData() {
+        self.viewSubject.onNext(.loading)
+        transformerDataRepository
+            .getTransformers()
+            .done { [weak self] fetchedTransformers in
+                self?.update(fetchedTransformers: fetchedTransformers)
+            }
+            .catch { [weak self] error in
+                let errorMessage = ErrorMessage.init(title: "Error!", message: error.localizedDescription)
+                self?.showError(error: errorMessage)
+            }
+    }
+    
+    public func didDeleteTransformer(at indexPath: IndexPath) {
+        self.viewSubject.onNext(.deleting)
+        
+        do {
+            var values = try transformersResults.value()
+            let transformer = values[indexPath.row]
+            transformerDataRepository.delete(transformer.id)
+                .done { [weak self] in
+                    values.remove(at: indexPath.row)
+                    self?.update(fetchedTransformers: values)
+                }.catch{ [weak self] error in
+                    let errorMessage = ErrorMessage.init(title: "Error!", message: error.localizedDescription)
+                    self?.showError(error: errorMessage)
+                }
+        } catch {
+            fatalError("Error reading value")
+        }
+    }
+}
+
+// MARK: -
+private extension ListViewModel {
+    
+    private func update(fetchedTransformers: [TransformerData]) {
+        self.viewSubject.onNext(.showingData)
+        self.transformersResults.onNext(fetchedTransformers)
+    }
+    
+    private func showError(error: ErrorMessage) {
+        self.viewSubject.onNext(.failure(error: error))
     }
 }

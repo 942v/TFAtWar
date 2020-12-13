@@ -13,7 +13,7 @@ public class AddViewController: UIViewController {
     // MARK: - Properties
     private var viewModel: AddViewModel!
     
-    // MARK: - Inyection of properties
+    // MARK: - Injection of dependencies
     public func inject(viewModelFactory: AddViewModelFactory) {
         self.viewModel = viewModelFactory.makeAddViewModel()
     }

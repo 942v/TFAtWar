@@ -97,7 +97,6 @@ private extension TransformersDataRepository {
                 }.then {
                     self.transformersDataStore.store(token: $0)
                 }.done {
-                    print("Token: \($0)")
                     self.transformersDataRemoteAPI.set(authorizationToken: $0)
                     seal.fulfill_()
                 }.catch {
