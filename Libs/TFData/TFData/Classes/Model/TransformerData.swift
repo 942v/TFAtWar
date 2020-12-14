@@ -37,9 +37,9 @@ public struct TransformerData {
     public let skill: Int
     public let team: TransformerTeam
     public let teamIcon: URL
-    public var overallRating: Int {
+    public lazy var overallRating: Int = {
         strength + intelligence + speed + endurance + firepower
-    }
+    }()
     
     private enum CodingKeys: String, CodingKey {
         case id, name, strength, intelligence, speed, endurance, rank, courage, firepower, skill, team
@@ -48,6 +48,32 @@ public struct TransformerData {
     
     private enum AdditionalInfoKeys: String, CodingKey {
         case team, teamIcon
+    }
+    
+    public init(id: String,
+         name: String,
+         strength: Int,
+         intelligence: Int,
+         speed: Int,
+         endurance: Int,
+         rank: Int,
+         courage: Int,
+         firepower: Int,
+         skill: Int,
+         team: TransformerTeam,
+         teamIcon: URL) {
+        self.id = id
+        self.name = name
+        self.strength = strength
+        self.intelligence = intelligence
+        self.speed = speed
+        self.endurance = endurance
+        self.rank = rank
+        self.courage = courage
+        self.firepower = firepower
+        self.skill = skill
+        self.team = team
+        self.teamIcon = teamIcon
     }
 }
 
@@ -83,6 +109,12 @@ extension TransformerData: Decodable {
             // TODO: for prod we should use a placeholder URL that redirects to a real image
             self.teamIcon = URL(string: "https://google.com")!
         }
+    }
+}
+
+extension TransformerData: Equatable {
+    public static func ==(lhs: TransformerData, rhs: TransformerData) -> Bool {
+      return lhs.id == rhs.id
     }
 }
 
