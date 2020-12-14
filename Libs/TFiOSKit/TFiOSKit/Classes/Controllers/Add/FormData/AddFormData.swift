@@ -24,6 +24,7 @@ protocol AddFormItemValidator {
 class AddFormData {
     var formItems = [AddFormItem]()
     
+    var id: String?
     var name: String?
     var strength: String?
     var intelligence: String?
@@ -59,7 +60,8 @@ class AddFormData {
         let skillValue = Int(skill) ?? 0
         let teamValue = TransformerTeam.type(from: team)
         
-        return TransformerRequest(name: name,
+        return TransformerRequest(id: id,
+                                  name: name,
                                   strength: strengthValue,
                                   intelligence: intelligenceValue,
                                   speed: speedValue,
@@ -71,7 +73,8 @@ class AddFormData {
                                   team: teamValue)
     }
     
-    init() {
+    init(from transformerData: TransformerData?) {
+        self.setupInitialData(transformerData)
         self.configureItems()
     }
     
@@ -215,5 +218,23 @@ class AddFormData {
                           courageItem,
                           firepowerItem,
                           skillItem]
+    }
+    
+    func setupInitialData(_ transformerData: TransformerData?) {
+        guard let transformerData = transformerData else {
+            return
+        }
+        
+        self.id = transformerData.id
+        self.name = transformerData.name
+        self.strength = String(transformerData.strength)
+        self.intelligence = String(transformerData.intelligence)
+        self.speed = String(transformerData.speed)
+        self.endurance = String(transformerData.endurance)
+        self.rank = String(transformerData.rank)
+        self.courage = String(transformerData.courage)
+        self.firepower = String(transformerData.firepower)
+        self.skill = String(transformerData.skill)
+        self.team = transformerData.team.rawValue
     }
 }

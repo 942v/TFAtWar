@@ -38,7 +38,7 @@ class AddRootTableView: UITableView {
     // MARK: - Injection of dependencies
     public func inject(viewModel: AddViewModel) {
         self.viewModel = viewModel
-        self.addFormData = AddFormData()
+        self.addFormData = AddFormData(from: viewModel.transformer)
         
         self.allowsSelection = false
         self.rowHeight = UITableView.automaticDimension

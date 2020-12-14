@@ -152,7 +152,8 @@ extension TransformersDataRemoteAPI: TransformersDataRemoteAPIProtocol {
                         seal.reject(RemoteAPIError.httpError)
                         return
                     }
-                    // TODO: handle errors with custom description
+                    
+                    seal.reject(RemoteAPIError.dataValidation)
                     return
                 }
                 guard let data = data else {
@@ -204,7 +205,8 @@ extension TransformersDataRemoteAPI: TransformersDataRemoteAPIProtocol {
                         seal.reject(RemoteAPIError.httpError)
                         return
                     }
-                    // TODO: handle errors with custom description
+                    
+                    seal.reject(RemoteAPIError.dataValidation)
                     return
                 }
                 guard let data = data else {
@@ -252,7 +254,8 @@ extension TransformersDataRemoteAPI: TransformersDataRemoteAPIProtocol {
                         seal.reject(RemoteAPIError.httpError)
                         return
                     }
-                    // TODO: handle errors with custom description
+                    
+                    seal.reject(RemoteAPIError.dataValidation)
                     return
                 }
                 

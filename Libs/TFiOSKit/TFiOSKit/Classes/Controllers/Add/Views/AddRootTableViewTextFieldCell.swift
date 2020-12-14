@@ -48,6 +48,7 @@ class AddRootTableViewTextFieldCell: UITableViewCell, AddRootTableViewCellFormIn
         self.textField.placeholder = addFormItem.placeholder
         self.textField.keyboardType = addFormItem.properties.keyboardType
         self.textField.text = addFormItem.value
+        self.textField.sendActions(for: .valueChanged)
         
         let fillColor: UIColor = addFormItem.isValid == false ? .red : .white
         self.backgroundColor = fillColor
@@ -59,7 +60,6 @@ extension AddRootTableViewTextFieldCell {
     
     func bindTextField() {
         textField.rx.text
-            .observeOn(MainScheduler.asyncInstance)
             .map { $0! }
             .subscribe {
                 self.addFormItem?.onCompletion?($0.element)

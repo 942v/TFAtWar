@@ -13,7 +13,7 @@ public class AddViewModel {
     // MARK: - Properties
     private unowned let transformerDataRepository: TransformersDataRepositoryProtocol
     private let didFinishAddResponder: DidFinishAddResponder
-    private let transformer: TransformerData?
+    public let transformer: TransformerData?
     
     // MARK: State
     private let viewSubject = BehaviorSubject<AddView>(value: .idle)

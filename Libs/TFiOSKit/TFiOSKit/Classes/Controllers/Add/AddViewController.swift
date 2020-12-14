@@ -97,6 +97,6 @@ private extension AddViewController {
     }
     
     func clearLoadingIndicator() {
-        view.removeFromSuperview()
+        self.loadingView?.removeFromSuperview()
     }
 }
