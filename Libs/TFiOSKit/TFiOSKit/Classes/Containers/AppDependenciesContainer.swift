@@ -8,10 +8,14 @@
 import Foundation
 import TFData
 import TFCommonKit
+import TFWarEngine
 
 public class AppDependenciesContainer {
     
     let sharedTransformersDataRepository: TransformersDataRepositoryProtocol
+    lazy var sharedMainNavigationDependenciesContainer: MainNavigationDependenciesContainer = {
+        makeMainMainNavigationDependenciesContainer()
+    }()
     
     let sharedMainViewModel: MainViewModel
     
@@ -64,9 +68,16 @@ extension AppDependenciesContainer {
 
 // MARK: - Main navigation
 extension AppDependenciesContainer {
+    
+    func makeMainMainNavigationDependenciesContainer() -> MainNavigationDependenciesContainer {
+        MainNavigationDependenciesContainer(appDependencyContainer: self)
+    }
+    
     func makeMainNavigationController() -> MainNavigationController {
-        let mainNavigationDependenciesContainer = MainNavigationDependenciesContainer(appDependencyContainer: self)
-        return mainNavigationDependenciesContainer.makeMainNavigationController()
+        let mainNavigationDependenciesContainer = sharedMainNavigationDependenciesContainer
+        let mainNavigationController = mainNavigationDependenciesContainer.makeMainNavigationController()
+        
+        return mainNavigationController
     }
 }
 
@@ -87,8 +98,18 @@ extension AppDependenciesContainer {
     }
     
     func makeBattlefieldViewModel() -> BattlefieldViewModel {
+        
         let mainViewModel = sharedMainViewModel
-        return BattlefieldViewModel(battlefieldNavigator: mainViewModel)
+        let mainNavigationDependenciesContainer = sharedMainNavigationDependenciesContainer
+        
+        func makeWarEngine() -> WarEngine {
+            WarEngine(transformers: mainNavigationDependenciesContainer.transformersForBattle())
+        }
+        
+        let warEngine = makeWarEngine()
+        
+        return BattlefieldViewModel(battlefieldNavigator: mainViewModel,
+                                    warEngine: warEngine)
     }
     
     func makeBattlefieldViewController() -> BattlefieldViewController {

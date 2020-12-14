@@ -106,3 +106,10 @@ extension MainNavigationDependenciesContainer: AddViewModelFactory {
         return AddNavigationController(viewModel: viewModel, addViewController: addViewController)
     }
 }
+
+// MARK: - BattlefieldResponder
+extension MainNavigationDependenciesContainer: BattlefieldResponder {
+    public func transformersForBattle() -> [TransformerData] {
+        sharedListViewModel.allTransformers()
+    }
+}

@@ -13,6 +13,7 @@ import RxSwift
 public class BattlefieldViewController: UIViewController {
     
     // MARK: - Properties
+    @IBOutlet weak var infoLabel: UILabel!
     
     // ViewModel
     private var viewModel: BattlefieldViewModel!
@@ -64,15 +65,14 @@ private extension BattlefieldViewController {
     
     func updateViewState(_ view: BattlefieldView) {
         switch view {
-        case .failure(let error):
-            showErrorView(for: error)
+        case .result(let result):
+            updateInfo(with: result)
         default:
             return
         }
     }
     
-    func showErrorView(for error: ErrorMessage) {
-        let alertController = UIAlertController.errorAlert(title: error.title, message: error.message)
-        present(alertController, animated: true, completion: nil)
+    func updateInfo(with result: String) {
+        infoLabel.text = result
     }
 }

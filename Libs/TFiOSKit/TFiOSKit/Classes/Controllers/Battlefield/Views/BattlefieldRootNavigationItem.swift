@@ -7,6 +7,8 @@
 
 import UIKit
 import TFCommonKit
+import RxSwift
+import RxCocoa
 
 class BattlefieldRootNavigationItem: UINavigationItem {
     
@@ -17,15 +19,31 @@ class BattlefieldRootNavigationItem: UINavigationItem {
     // ViewModel
     private unowned var viewModel: BattlefieldViewModel!
     
+    // State
+    private let disposeBag = DisposeBag()
+    
     // MARK: - Injection of dependencies
     public func inject(viewModel: BattlefieldViewModel) {
         self.viewModel = viewModel
         
         setup()
+        
+        bindViews()
     }
 
     private func setup() {
         title = viewModel.title()
+    }
+}
+
+// MARK: - Bindings
+extension BattlefieldRootNavigationItem {
+    func bindViews() {
+        viewModel
+            .barButtonsEnabled
+            .asDriver(onErrorJustReturn: true)
+            .drive(startBarButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }
 

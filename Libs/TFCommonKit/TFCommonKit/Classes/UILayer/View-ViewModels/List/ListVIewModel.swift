@@ -84,6 +84,14 @@ extension ListViewModel {
             fatalError("Error reading value")
         }
     }
+    
+    public func allTransformers() -> [TransformerData] {
+        do {
+            return try transformersResults.value()
+        } catch {
+            fatalError("Error reading value")
+        }
+    }
 }
 
 // MARK: -
@@ -99,7 +107,7 @@ private extension ListViewModel {
     }
 }
 
-// MARK: - 
+// MARK: -
 extension ListViewModel {
     public func showBattlefield() {
         battlefieldNavigator.navigateToBattlefield()

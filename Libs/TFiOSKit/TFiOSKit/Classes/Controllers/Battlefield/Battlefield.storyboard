@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press start to see the winner! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-Nw-efI">
-                                <rect key="frame" x="94" y="393.5" width="226.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press start to see the winner! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-Nw-efI">
+                                <rect key="frame" x="16" y="394" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,7 +27,8 @@
                         <viewLayoutGuide key="safeArea" id="4QQ-16-xrb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lOl-Nw-efI" firstAttribute="centerX" secondItem="AVV-Xv-IfH" secondAttribute="centerX" id="t1p-yd-8eG"/>
+                            <constraint firstItem="lOl-Nw-efI" firstAttribute="leading" secondItem="4QQ-16-xrb" secondAttribute="leading" constant="16" id="Ove-bU-58T"/>
+                            <constraint firstItem="4QQ-16-xrb" firstAttribute="trailing" secondItem="lOl-Nw-efI" secondAttribute="trailing" constant="16" id="fpT-CQ-8qH"/>
                             <constraint firstItem="lOl-Nw-efI" firstAttribute="centerY" secondItem="AVV-Xv-IfH" secondAttribute="centerY" id="zpZ-dZ-gkO"/>
                         </constraints>
                     </view>
@@ -48,6 +49,9 @@
                         </connections>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="lOl-Nw-efI" id="Aro-sc-YDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pa-SO-gft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

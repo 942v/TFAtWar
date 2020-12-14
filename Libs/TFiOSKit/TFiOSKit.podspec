@@ -41,6 +41,7 @@ TODO: Add long description of the pod here.
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'TFData'
   s.dependency 'TFCommonKit'
+  s.dependency 'TFWarEngine'
   s.dependency 'PATools'
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'

@@ -11,8 +11,7 @@ import TFData
 public enum BattlefieldView {
     
     case idle
-    case winner
-    case failure(error: ErrorMessage)
+    case result(_ info: String)
 }
 
 extension BattlefieldView: Equatable {

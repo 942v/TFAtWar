@@ -33,8 +33,10 @@ public class WarEngine {
 }
 
 extension WarEngine {
-    public func startBattle() -> (winnerTeam: TransformerTeam,
+    public func startBattle() -> (battles: Int,
+                                  winnerTeam: TransformerTeam,
                                   winners: [TransformerData],
+                                  loserTeam: TransformerTeam,
                                   losers: [TransformerData])? {
         
         var autobotsIndex = 0
@@ -71,19 +73,33 @@ extension WarEngine {
             decepticonsIndex += 1
         }
         
+        var battles: Int
         var winnerTeam: TransformerTeam
         var winners: [TransformerData]
+        var loserTeam: TransformerTeam
         var losers: [TransformerData]
         
+        guard autobotsWins != decepticonsWins else {
+            return nil
+        }
+        
         if autobotsWins>decepticonsWins {
+            battles = autobotsWins
             winnerTeam = .autobot
+            loserTeam = .decepticon
             winners = autobots
             losers = decepticons
-        }else{
+        }else {
+            battles = decepticonsWins
             winnerTeam = .decepticon
+            loserTeam = .autobot
             winners = decepticons
             losers = autobots
         }
-        return (winnerTeam, winners, losers)
+        return (battles,
+                winnerTeam,
+                winners,
+                loserTeam,
+                losers)
     }
 }
