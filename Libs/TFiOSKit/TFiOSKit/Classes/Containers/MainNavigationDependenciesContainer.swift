@@ -14,6 +14,7 @@ public class MainNavigationDependenciesContainer {
     private unowned let sharedTransformersDataRepository: TransformersDataRepositoryProtocol
     private unowned let sharedMainViewModel: MainViewModel
     private let sharedMainNavigationViewModel: MainNavigationViewModel
+    private let sharedListViewModel: ListViewModel
     
     public init(appDependencyContainer: AppDependenciesContainer) {
         
@@ -22,9 +23,18 @@ public class MainNavigationDependenciesContainer {
             return MainNavigationViewModel(goToBattlefieldNavigator: goToBattlefieldNavigator)
         }
         
+        func makeListViewModel(transformerDataRepository: TransformersDataRepositoryProtocol,
+                               addScreenResponder: AddScreenResponder) -> ListViewModel {
+            
+            return ListViewModel(transformerDataRepository: transformerDataRepository,
+                                 addScreenResponder: addScreenResponder)
+        }
+        
         self.sharedTransformersDataRepository = appDependencyContainer.sharedTransformersDataRepository
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
         self.sharedMainNavigationViewModel = makeMainNavigationViewModel(goToBattlefieldNavigator: sharedMainViewModel)
+        self.sharedListViewModel = makeListViewModel(transformerDataRepository: sharedTransformersDataRepository,
+                                                     addScreenResponder: sharedMainNavigationViewModel)
     }
 }
 
@@ -35,32 +45,26 @@ extension MainNavigationDependenciesContainer {
         
         let listTableViewController = makeListTableViewController()
 
-        func addViewControllerFactory(transformer: TransformerData?) -> AddViewController {
-            return makeAddViewController(transformer: transformer)
+        func addNavigationControllerFactory(transformer: TransformerData?) -> AddNavigationController {
+            return makeAddNavigationController(transformer: transformer)
         }
         
         return MainNavigationController(viewModel: viewModel,
                                         listTableViewController: listTableViewController,
-                                        makeAddViewController: addViewControllerFactory)
+                                        makeAddNavigationController: addNavigationControllerFactory)
     }
 }
 
 // MARK: - List
-extension MainNavigationDependenciesContainer: ListViewModelFactory {
-    
-    public func makeListViewModel() -> ListViewModel {
-        let transformerDataRepository = sharedTransformersDataRepository
-        let viewModel = sharedMainNavigationViewModel
-        
-        return ListViewModel(transformerDataRepository: transformerDataRepository,
-                             showAddScreenResponder: viewModel)
-    }
+extension MainNavigationDependenciesContainer {
     
     func makeListTableViewController() -> ListTableViewController {
         
         let listTableViewController = ListTableViewController.instantiate(from: .listStoryboard, framework: "TFiOSKit")
         
-        listTableViewController.inject(viewModelFactory: self)
+        let viewModel = sharedListViewModel
+        
+        listTableViewController.inject(viewModel: viewModel)
         
         return listTableViewController
     }
@@ -71,8 +75,9 @@ extension MainNavigationDependenciesContainer: AddViewModelFactory {
     
     public func makeAddViewModel(transformer: TransformerData?) -> AddViewModel {
         let transformerDataRepository = sharedTransformersDataRepository
-//        let viewModel = sharedMainNavigationViewModel
+        let listViewModel = sharedListViewModel
         return AddViewModel(transformerDataRepository: transformerDataRepository,
+                            didFinishAddResponder: listViewModel,
                             transformer: transformer)
     }
     
@@ -80,8 +85,21 @@ extension MainNavigationDependenciesContainer: AddViewModelFactory {
         
         let addViewController = AddViewController.instantiate(from: .addStoryboard, framework: "TFiOSKit")
         
-        addViewController.inject(viewModel: makeAddViewModel(transformer: transformer))
+        let viewModel = makeAddViewModel(transformer: transformer)
+        
+        addViewController.inject(viewModel: viewModel)
         
         return addViewController
+    }
+    
+    func makeAddNavigationViewModel() -> AddNavigationViewModel {
+        return AddNavigationViewModel()
+    }
+    
+    func makeAddNavigationController(transformer: TransformerData?) -> AddNavigationController {
+        let viewModel = makeAddNavigationViewModel()
+        let addViewController = makeAddViewController(transformer: transformer)
+        
+        return AddNavigationController(viewModel: viewModel, addViewController: addViewController)
     }
 }

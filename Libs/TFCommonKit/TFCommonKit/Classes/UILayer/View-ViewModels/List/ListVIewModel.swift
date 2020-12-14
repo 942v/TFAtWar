@@ -12,7 +12,7 @@ public class ListViewModel {
     
     // MARK: - Properties
     private unowned let transformerDataRepository: TransformersDataRepositoryProtocol
-    private unowned let showAddScreenResponder: ShowAddScreenResponder
+    private unowned let addScreenResponder: AddScreenResponder
     
     // MARK: State
     private let viewSubject = BehaviorSubject<ListView>(value: .loading)
@@ -24,9 +24,9 @@ public class ListViewModel {
     
     // MARK: - Init
     public init(transformerDataRepository: TransformersDataRepositoryProtocol,
-                showAddScreenResponder: ShowAddScreenResponder) {
+                addScreenResponder: AddScreenResponder) {
         self.transformerDataRepository = transformerDataRepository
-        self.showAddScreenResponder = showAddScreenResponder
+        self.addScreenResponder = addScreenResponder
     }
 }
 
@@ -70,13 +70,13 @@ extension ListViewModel {
     }
     
     public func showAddTransformer() {
-        showAddScreenResponder.showAddScreen(transformer: nil)
+        addScreenResponder.showAddScreen(transformer: nil)
     }
     
     public func didSelectRow(at indexPath: IndexPath) {
         do {
             let transformer = try transformersResults.value()[indexPath.row]
-            showAddScreenResponder.showAddScreen(transformer: transformer)
+            addScreenResponder.showAddScreen(transformer: transformer)
         } catch {
             fatalError("Error reading value")
         }
@@ -93,5 +93,17 @@ private extension ListViewModel {
     
     private func showError(error: ErrorMessage) {
         self.viewSubject.onNext(.failure(error: error))
+    }
+}
+
+// MARK: - DidFinishAddResponder
+extension ListViewModel: DidFinishAddResponder {
+    public func didAddData() {
+        loadData()
+        addScreenResponder.removeAddScreen()
+    }
+
+    public func didCancelAdd() {
+        addScreenResponder.removeAddScreen()
     }
 }

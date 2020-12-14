@@ -11,6 +11,16 @@ public enum TransformerTeam: String {
     case unknown
     case decepticon = "D"
     case autobot = "A"
+    
+    public static func type(from string: String) -> TransformerTeam {
+        if string == "A" {
+            return .autobot
+        }else if string == "D" {
+            return .decepticon
+        }else {
+            return .unknown
+        }
+    }
 }
 
 public struct TransformerData {

@@ -10,7 +10,7 @@ import TFData
 import TFCommonKit
 import RxSwift
 
-public typealias AddViewControllerFactory = (TransformerData?) ->  AddViewController
+public typealias AddNavigationControllerFactory = (TransformerData?) ->  AddNavigationController
 
 public class MainNavigationController: UINavigationController {
     
@@ -22,7 +22,7 @@ public class MainNavigationController: UINavigationController {
     private let listTableViewController: ListTableViewController
     
     // Factories
-    private let makeAddViewController: AddViewControllerFactory
+    private let makeAddNavigationController: AddNavigationControllerFactory
     
     // Storage
     private let disposeBag = DisposeBag()
@@ -30,10 +30,10 @@ public class MainNavigationController: UINavigationController {
     // MARK: - Methods
     init(viewModel: MainNavigationViewModel,
          listTableViewController: ListTableViewController,
-         makeAddViewController: @escaping AddViewControllerFactory) {
+         makeAddNavigationController: @escaping AddNavigationControllerFactory) {
         self.viewModel = viewModel
         self.listTableViewController = listTableViewController
-        self.makeAddViewController = makeAddViewController
+        self.makeAddNavigationController = makeAddNavigationController
         
         super.init(nibName: nil, bundle: nil)
         self.delegate = self
@@ -42,7 +42,7 @@ public class MainNavigationController: UINavigationController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +54,7 @@ extension MainNavigationController {
     
     private func observeViewModel() {
         let observable = viewModel.navigationAction.distinctUntilChanged()
-      subscribe(to: observable)
+        subscribe(to: observable)
     }
     
     func subscribe(to observable: Observable<MainNavigationAction>) {
@@ -86,39 +86,53 @@ extension MainNavigationController {
     }
     
     func presentListTableViewController() {
-        pushViewController(listTableViewController, animated: false)
+        guard self.viewControllers.first is ListTableViewController else {
+            pushViewController(listTableViewController, animated: false)
+            return
+        }
+        
+        self.popToRootViewController(animated: true)
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
     func presentAddViewController(_ transformer: TransformerData?) {
-        let addViewControllerToPresent = makeAddViewController(transformer)
+        let addNavigationControllerToPresent = makeAddNavigationController(transformer)
         
-        pushViewController(addViewControllerToPresent, animated: true)
+        if #available(iOS 13.0, *) {
+            addNavigationControllerToPresent.isModalInPresentation = true
+        }
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            addNavigationControllerToPresent.modalPresentationStyle = .formSheet
+        }
+        
+        present(addNavigationControllerToPresent, animated: true, completion: nil)
     }
 }
 
 extension MainNavigationController {
     func hideOrShowNavigationBarIfNeeded(for view: MainNavigationView, animated: Bool) {
-      if view.shouldHideNavigationBar() {
-        hideNavigationBar(animated: animated)
-      } else {
-        showNavigationBar(animated: animated)
-      }
+        if view.shouldHideNavigationBar() {
+            hideNavigationBar(animated: animated)
+        } else {
+            showNavigationBar(animated: animated)
+        }
     }
-
+    
     func hideNavigationBar(animated: Bool) {
-      if animated {
-        transitionCoordinator?.animate(alongsideTransition: { context in
-          self.setNavigationBarHidden(true, animated: animated)
-        })
-      } else {
-        setNavigationBarHidden(true, animated: false)
-      }
+        if animated {
+            transitionCoordinator?.animate(alongsideTransition: { context in
+                self.setNavigationBarHidden(true, animated: animated)
+            })
+        } else {
+            setNavigationBarHidden(true, animated: false)
+        }
     }
-
+    
     func showNavigationBar(animated: Bool) {
-      if self.isNavigationBarHidden {
-        self.setNavigationBarHidden(false, animated: animated)
-      }
+        if self.isNavigationBarHidden {
+            self.setNavigationBarHidden(false, animated: animated)
+        }
     }
 }
 
@@ -137,14 +151,14 @@ extension MainNavigationController: UINavigationControllerDelegate {
 
 private extension MainNavigationController {
     func mainNavigationView(associatedWith viewController: UIViewController) -> MainNavigationView? {
-      switch viewController {
-      case is ListTableViewController:
-        return .list
-      case is AddViewController:
-        return .add(transformer: nil)
-      default:
-        assertionFailure("Encountered unexpected child view controller type in OnboardingViewController")
-        return nil
-      }
+        switch viewController {
+        case is ListTableViewController:
+            return .list
+        case is AddViewController:
+            return .add(transformer: nil)
+        default:
+            assertionFailure("Encountered unexpected child view controller type in \(self)")
+            return nil
+        }
     }
 }

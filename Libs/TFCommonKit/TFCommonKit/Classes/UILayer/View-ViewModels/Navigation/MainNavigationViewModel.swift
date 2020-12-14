@@ -35,8 +35,12 @@ extension MainNavigationViewModel {
 }
 
 // MARK: - Responders
-extension MainNavigationViewModel: ShowAddScreenResponder {
+extension MainNavigationViewModel: AddScreenResponder {
     public func showAddScreen(transformer: TransformerData?) {
         _navigationAction.onNext(.present(view: .add(transformer: transformer)))
+    }
+    
+    public func removeAddScreen() {
+        _navigationAction.onNext(.present(view: .list))
     }
 }

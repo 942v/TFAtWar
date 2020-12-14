@@ -32,7 +32,7 @@ class ListRootTableView: UITableView {
         self.viewModel = viewModel
         
         self.rowHeight = UITableView.automaticDimension
-        self.rowHeight = 158
+        self.estimatedRowHeight = 158
         
         self.delegate = self
         self.dataSource = self

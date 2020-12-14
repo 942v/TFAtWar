@@ -23,8 +23,8 @@ public class ListTableViewController: UITableViewController {
     private let disposeBag = DisposeBag()
     
     // MARK: - Injection of dependencies
-    public func inject(viewModelFactory: ListViewModelFactory) {
-        self.viewModel = viewModelFactory.makeListViewModel()
+    public func inject(viewModel: ListViewModel) {
+        self.viewModel = viewModel
     }
     
     public override func viewDidLoad() {

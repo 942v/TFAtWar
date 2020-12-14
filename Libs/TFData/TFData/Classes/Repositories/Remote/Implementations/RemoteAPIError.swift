@@ -12,6 +12,11 @@ public enum RemoteAPIError: Error {
     case createURL
     case httpError
     case needAuthentication
+    case dataValidation
+    
+    var localizedDescription: String {
+        return description
+    }
 }
 
 extension RemoteAPIError: CustomStringConvertible {
@@ -26,6 +31,14 @@ extension RemoteAPIError: CustomStringConvertible {
             return "An unknown error happen, try again"
         case .needAuthentication:
             return "You need to authenticate first"
+        case .dataValidation:
+            return "Invalid values"
         }
+    }
+}
+
+extension RemoteAPIError: LocalizedError {
+    public var errorDescription: String? {
+        description
     }
 }
