@@ -71,8 +71,8 @@ extension WarEngineTests {
         
         let result = sut.startBattle()!
         
-        XCTAssertTrue(result.winnerTeam == .autobot)
-        XCTAssertFalse(result.winnerTeam == .decepticon)
+        XCTAssertTrue(result.winnerTeam == .decepticon)
+        XCTAssertFalse(result.winnerTeam == .autobot)
     }
     
     func testWarEngine_whenFight_allDead() {
