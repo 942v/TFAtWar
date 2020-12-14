@@ -50,7 +50,7 @@ extension WarEngine {
             battleField.setPlayers(autobot: autobot, decepticon: decepticon)
             let fightResult = battleField.fight()
             
-            switch fightResult.0 {
+            switch fightResult.result {
             case .totalDestruction:
                 // End all
                 return nil
@@ -60,7 +60,7 @@ extension WarEngine {
                 continue
             case .winner:
                 // It's safe to force because in the case of winner we are always going to receive a transformer
-                let winner = fightResult.1!
+                let winner = fightResult.winner!
                 if winner.team == .autobot {
                     autobotsWins += 1
                     decepticons.remove(at: decepticonsIndex)

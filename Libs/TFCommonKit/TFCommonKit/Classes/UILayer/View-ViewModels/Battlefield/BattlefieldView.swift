@@ -16,15 +16,13 @@ public enum BattlefieldView {
 
 extension BattlefieldView: Equatable {
     
-//    public static func == (lhs: BattlefieldView, rhs: BattlefieldView) -> Bool {
-//        switch (lhs, rhs) {
-//        case (.loading, .loading),
-//             (.idle, .idle),
-//             (.validating, .validating),
-//             (.failure(_), .failure(_)):
-//            return true
-//        default:
-//            return false
-//        }
-//    }
+    public static func == (lhs: BattlefieldView, rhs: BattlefieldView) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle),
+             (.result(_), .result(_)):
+            return true
+        default:
+            return false
+        }
+    }
 }

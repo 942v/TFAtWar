@@ -27,10 +27,33 @@ class ListRootNavigationItem: UINavigationItem {
         self.viewModel = viewModel
         
         setup()
+        
+        bindViews()
     }
 
     private func setup() {
         title = viewModel.title()
+    }
+}
+
+// MARK: - Bindings
+extension ListRootNavigationItem {
+    func bindViews() {
+        viewModel
+            .barButtonsEnabled
+            .asDriver(onErrorJustReturn: true)
+            .drive(battleBarButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        viewModel
+            .barButtonsEnabled
+            .asDriver(onErrorJustReturn: true)
+            .drive(refreshBarButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        viewModel
+            .barButtonsEnabled
+            .asDriver(onErrorJustReturn: true)
+            .drive(addBarButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }
 

@@ -42,6 +42,23 @@ class ListRootTableView: UITableView {
     }
 }
 
+// MARK: - Bindings
+private extension ListRootTableView {
+    
+    private func observeViewModel() {
+        
+        viewModel.transformersResults
+            .asDriver(onErrorRecover: { _ in fatalError("Fatal error in observable") })
+            .drive(transformersResults)
+            .disposed(by: disposeBag)
+        
+        transformersResults
+            .asDriver(onErrorRecover: { _ in fatalError("Encountered unexpected view model search results observable error.") })
+            .drive(onNext: { [weak self] _ in self?.reloadData() })
+            .disposed(by: disposeBag)
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension ListRootTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,22 +102,5 @@ extension ListRootTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-// MARK: - Bindings
-private extension ListRootTableView {
-    
-    private func observeViewModel() {
-        
-        viewModel.transformersResults
-            .asDriver(onErrorRecover: { _ in fatalError("Fatal error in observable") })
-            .drive(transformersResults)
-            .disposed(by: disposeBag)
-        
-        transformersResults
-            .asDriver(onErrorRecover: { _ in fatalError("Encountered unexpected view model search results observable error.") })
-            .drive(onNext: { [weak self] _ in self?.reloadData() })
-            .disposed(by: disposeBag)
     }
 }

@@ -17,6 +17,7 @@ public class ListViewModel {
     
     // MARK: State
     private let viewSubject = BehaviorSubject<ListView>(value: .loading)
+    public let barButtonsEnabled = BehaviorSubject<Bool>(value: true)
     public var view: Observable<ListView> {
         return viewSubject.asObservable()
     }
@@ -42,6 +43,8 @@ extension ListViewModel {
     
     public func loadData() {
         self.viewSubject.onNext(.loading)
+        self.transformersResults.onNext([])
+        self.barButtonsEnabled.onNext(false)
         transformerDataRepository
             .getTransformers()
             .done { [weak self] fetchedTransformers in
@@ -55,6 +58,7 @@ extension ListViewModel {
     
     public func didDeleteTransformer(at indexPath: IndexPath) {
         self.viewSubject.onNext(.deleting)
+        self.barButtonsEnabled.onNext(false)
         
         do {
             var values = try transformersResults.value()
@@ -99,10 +103,12 @@ private extension ListViewModel {
     
     private func update(fetchedTransformers: [TransformerData]) {
         self.viewSubject.onNext(.showingData)
+        self.barButtonsEnabled.onNext(true)
         self.transformersResults.onNext(fetchedTransformers)
     }
     
     private func showError(error: ErrorMessage) {
+        self.barButtonsEnabled.onNext(true)
         self.viewSubject.onNext(.failure(error: error))
     }
 }
