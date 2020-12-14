@@ -11,6 +11,16 @@ public enum TransformerTeam: String {
     case unknown
     case decepticon = "D"
     case autobot = "A"
+    
+    public static func type(from string: String) -> TransformerTeam {
+        if string == "A" {
+            return .autobot
+        }else if string == "D" {
+            return .decepticon
+        }else {
+            return .unknown
+        }
+    }
 }
 
 public struct TransformerData {
@@ -27,6 +37,9 @@ public struct TransformerData {
     public let skill: Int
     public let team: TransformerTeam
     public let teamIcon: URL
+    public var overallRating: Int {
+        strength + intelligence + speed + endurance + firepower
+    }
     
     private enum CodingKeys: String, CodingKey {
         case id, name, strength, intelligence, speed, endurance, rank, courage, firepower, skill, team

@@ -1,0 +1,16 @@
+use_frameworks! :linkage => :static
+
+platform :ios, '10.0'
+
+target 'TFiOSKit_Example' do
+  pod 'TFiOSKit', :path => '../'
+  
+  pod 'TFData', :path => '../../TFData/'
+  pod 'TFCommonKit', :path => '../../TFCommonKit/'
+
+  target 'TFiOSKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -9,7 +9,7 @@ import Foundation
 
 public struct TransformerRequest {
     
-    let id: String?
+    public let id: String?
     let name: String
     let strength: Int
     let intelligence: Int

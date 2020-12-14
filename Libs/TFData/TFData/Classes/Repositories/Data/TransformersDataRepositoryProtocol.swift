@@ -8,7 +8,7 @@
 import Foundation
 import PromiseKit
 
-public protocol TransformersDataRepositoryProtocol {
+public protocol TransformersDataRepositoryProtocol: AnyObject {
     
     func create(_ request: TransformerRequest) -> Promise<TransformerData>
     func getTransformers() -> Promise<[TransformerData]>
