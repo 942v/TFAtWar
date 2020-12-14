@@ -1,9 +1,11 @@
-use_frameworks!
+use_frameworks! :linkage => :static
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'TFWarEngine_Example' do
   pod 'TFWarEngine', :path => '../'
+  
+  pod 'TFData', :path => '../../TFData/'
 
   target 'TFWarEngine_Tests' do
     inherit! :search_paths

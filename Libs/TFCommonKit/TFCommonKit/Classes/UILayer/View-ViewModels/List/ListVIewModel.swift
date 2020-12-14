@@ -12,10 +12,12 @@ public class ListViewModel {
     
     // MARK: - Properties
     private unowned let transformerDataRepository: TransformersDataRepositoryProtocol
+    private unowned let battlefieldNavigator: GoToBattlefieldNavigator
     private unowned let addScreenResponder: AddScreenResponder
     
     // MARK: State
     private let viewSubject = BehaviorSubject<ListView>(value: .loading)
+    public let barButtonsEnabled = BehaviorSubject<Bool>(value: true)
     public var view: Observable<ListView> {
         return viewSubject.asObservable()
     }
@@ -24,8 +26,10 @@ public class ListViewModel {
     
     // MARK: - Init
     public init(transformerDataRepository: TransformersDataRepositoryProtocol,
+                battlefieldNavigator: GoToBattlefieldNavigator,
                 addScreenResponder: AddScreenResponder) {
         self.transformerDataRepository = transformerDataRepository
+        self.battlefieldNavigator = battlefieldNavigator
         self.addScreenResponder = addScreenResponder
     }
 }
@@ -39,6 +43,8 @@ extension ListViewModel {
     
     public func loadData() {
         self.viewSubject.onNext(.loading)
+        self.transformersResults.onNext([])
+        self.barButtonsEnabled.onNext(false)
         transformerDataRepository
             .getTransformers()
             .done { [weak self] fetchedTransformers in
@@ -52,6 +58,7 @@ extension ListViewModel {
     
     public func didDeleteTransformer(at indexPath: IndexPath) {
         self.viewSubject.onNext(.deleting)
+        self.barButtonsEnabled.onNext(false)
         
         do {
             var values = try transformersResults.value()
@@ -81,6 +88,14 @@ extension ListViewModel {
             fatalError("Error reading value")
         }
     }
+    
+    public func allTransformers() -> [TransformerData] {
+        do {
+            return try transformersResults.value()
+        } catch {
+            fatalError("Error reading value")
+        }
+    }
 }
 
 // MARK: -
@@ -88,11 +103,20 @@ private extension ListViewModel {
     
     private func update(fetchedTransformers: [TransformerData]) {
         self.viewSubject.onNext(.showingData)
+        self.barButtonsEnabled.onNext(true)
         self.transformersResults.onNext(fetchedTransformers)
     }
     
     private func showError(error: ErrorMessage) {
+        self.barButtonsEnabled.onNext(true)
         self.viewSubject.onNext(.failure(error: error))
+    }
+}
+
+// MARK: -
+extension ListViewModel {
+    public func showBattlefield() {
+        battlefieldNavigator.navigateToBattlefield()
     }
 }
 

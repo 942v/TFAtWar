@@ -8,10 +8,14 @@
 import Foundation
 import TFData
 import TFCommonKit
+import TFWarEngine
 
 public class AppDependenciesContainer {
     
     let sharedTransformersDataRepository: TransformersDataRepositoryProtocol
+    lazy var sharedMainNavigationDependenciesContainer: MainNavigationDependenciesContainer = {
+        makeMainMainNavigationDependenciesContainer()
+    }()
     
     let sharedMainViewModel: MainViewModel
     
@@ -52,9 +56,11 @@ extension AppDependenciesContainer {
         
         let viewModel = sharedMainViewModel
         let mainNavigationControllerFactory = makeMainNavigationController
+        let battlefieldNavigationControllerFactory = makeBattlefieldNavigationController
         
         let mainViewController = MainViewController(viewModel: viewModel,
-                                                    mainNavigationControllerFactory: mainNavigationControllerFactory)
+                                                    mainNavigationControllerFactory: mainNavigationControllerFactory,
+                                                    battlefieldNavigationControllerFactory: battlefieldNavigationControllerFactory)
         
         return mainViewController
     }
@@ -62,8 +68,58 @@ extension AppDependenciesContainer {
 
 // MARK: - Main navigation
 extension AppDependenciesContainer {
+    
+    func makeMainMainNavigationDependenciesContainer() -> MainNavigationDependenciesContainer {
+        MainNavigationDependenciesContainer(appDependencyContainer: self)
+    }
+    
     func makeMainNavigationController() -> MainNavigationController {
-        let mainNavigationDependenciesContainer = MainNavigationDependenciesContainer(appDependencyContainer: self)
-        return mainNavigationDependenciesContainer.makeMainNavigationController()
+        let mainNavigationDependenciesContainer = sharedMainNavigationDependenciesContainer
+        let mainNavigationController = mainNavigationDependenciesContainer.makeMainNavigationController()
+        
+        return mainNavigationController
+    }
+}
+
+// MARK: - Battlefield navigation
+extension AppDependenciesContainer {
+    func makeBattlefieldNavigationController() -> BattlefieldNavigationController {
+        let viewModel = makeBattlefieldNavigationViewModel()
+        let battlefieldViewController = makeBattlefieldViewController()
+        
+        let battlefieldNavigationController = BattlefieldNavigationController(viewModel: viewModel,
+                                                                              battlefieldViewController: battlefieldViewController)
+        
+        return battlefieldNavigationController
+    }
+    
+    func makeBattlefieldNavigationViewModel() -> BattlefieldNavigationViewModel {
+        return BattlefieldNavigationViewModel()
+    }
+    
+    func makeBattlefieldViewModel() -> BattlefieldViewModel {
+        
+        let mainViewModel = sharedMainViewModel
+        let mainNavigationDependenciesContainer = sharedMainNavigationDependenciesContainer
+        
+        func makeWarEngine() -> WarEngine {
+            WarEngine(transformers: mainNavigationDependenciesContainer.transformersForBattle())
+        }
+        
+        let warEngine = makeWarEngine()
+        
+        return BattlefieldViewModel(battlefieldNavigator: mainViewModel,
+                                    warEngine: warEngine)
+    }
+    
+    func makeBattlefieldViewController() -> BattlefieldViewController {
+        
+        let battlefieldViewController = BattlefieldViewController.instantiate(from: .battelfieldStoryboard, framework: "TFiOSKit")
+        
+        let viewModel = makeBattlefieldViewModel()
+        
+        battlefieldViewController.inject(viewModel: viewModel)
+        
+        return battlefieldViewController
     }
 }

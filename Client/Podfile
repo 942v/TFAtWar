@@ -8,7 +8,7 @@ target 'TFAtWar' do
   pod 'TFCommonKit', :path => "../Libs/TFCommonKit", :preserve_pod_file_structure => true
   pod 'TFData', :path => "../Libs/TFData", :preserve_pod_file_structure => true
   pod 'TFiOSKit', :path => "../Libs/TFiOSKit", :preserve_pod_file_structure => true
-  pod 'TFWarEngine', :path => "../Libs/TFWarEngine", :preserve_pod_file_structure => true
+  pod 'TFWarEngine', :path => "../Libs/TFWarEngine", :preserve_pod_file_structure => true, :testspecs => ['TFWarEngineTests'] 
 
   # Pods for TFAtWar
 

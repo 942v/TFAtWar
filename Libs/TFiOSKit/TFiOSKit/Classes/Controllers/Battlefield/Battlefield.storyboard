@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sDI-gK-4yT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Battlefield View Controller-->
+        <scene sceneID="Dca-G4-wcY">
+            <objects>
+                <viewController storyboardIdentifier="BattlefieldViewController" id="sDI-gK-4yT" customClass="BattlefieldViewController" customModule="TFiOSKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AVV-Xv-IfH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press start to see the winner! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-Nw-efI">
+                                <rect key="frame" x="16" y="394" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4QQ-16-xrb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lOl-Nw-efI" firstAttribute="leading" secondItem="4QQ-16-xrb" secondAttribute="leading" constant="16" id="Ove-bU-58T"/>
+                            <constraint firstItem="4QQ-16-xrb" firstAttribute="trailing" secondItem="lOl-Nw-efI" secondAttribute="trailing" constant="16" id="fpT-CQ-8qH"/>
+                            <constraint firstItem="lOl-Nw-efI" firstAttribute="centerY" secondItem="AVV-Xv-IfH" secondAttribute="centerY" id="zpZ-dZ-gkO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h38-Dk-saR" customClass="BattlefieldRootNavigationItem" customModule="TFiOSKit" customModuleProvider="target">
+                        <barButtonItem key="leftBarButtonItem" title="End" id="4bx-63-QhZ">
+                            <connections>
+                                <action selector="doEndAction:" destination="h38-Dk-saR" id="wrp-a5-GF5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="ne5-93-Dm2">
+                            <connections>
+                                <action selector="doStartAction:" destination="h38-Dk-saR" id="ybg-6T-AMc"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="goBackBarButton" destination="4bx-63-QhZ" id="02M-d8-pt7"/>
+                            <outlet property="startBarButton" destination="ne5-93-Dm2" id="0Kq-2H-UkP"/>
+                        </connections>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="lOl-Nw-efI" id="Aro-sc-YDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pa-SO-gft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097.1014492753625" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

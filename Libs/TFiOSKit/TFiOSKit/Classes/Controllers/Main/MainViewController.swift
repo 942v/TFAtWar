@@ -11,6 +11,7 @@ import TFCommonKit
 import RxSwift
 
 public typealias MainNavigationControllerFactory = () ->  MainNavigationController
+public typealias BattlefieldNavigationControllerFactory = () ->  BattlefieldNavigationController
 
 public class MainViewController: NiblessViewController {
     
@@ -23,12 +24,15 @@ public class MainViewController: NiblessViewController {
     
     // Factories
     private let makeMainNavigationController: MainNavigationControllerFactory
+    private let makeBattlefieldNavigationController: BattlefieldNavigationControllerFactory
     
     // MARK: - Methods
     init(viewModel: MainViewModel,
-         mainNavigationControllerFactory: @escaping MainNavigationControllerFactory) {
+         mainNavigationControllerFactory: @escaping MainNavigationControllerFactory,
+         battlefieldNavigationControllerFactory: @escaping BattlefieldNavigationControllerFactory) {
         self.viewModel = viewModel
         self.makeMainNavigationController = mainNavigationControllerFactory
+        self.makeBattlefieldNavigationController = battlefieldNavigationControllerFactory
         super.init()
     }
 
@@ -59,12 +63,31 @@ extension MainViewController {
         case .mainNavigationController:
             presentMainNavigationController()
         case .battlefield:
-            print("Should show battlefield")
+            presentBattlefieldNavigationController()
         }
     }
     
     func presentMainNavigationController() {
+        guard presentedViewController == nil else {
+            presentedViewController?.dismiss(animated: true, completion: nil)
+            return
+        }
+        
         let mainNavigationController = makeMainNavigationController()
         addFullScreen(childViewController: mainNavigationController)
+    }
+    
+    func presentBattlefieldNavigationController() {
+        let battlefieldNavigationController  = makeBattlefieldNavigationController()
+        
+        if #available(iOS 13.0, *) {
+            battlefieldNavigationController.isModalInPresentation = true
+        }
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            battlefieldNavigationController.modalPresentationStyle = .pageSheet
+        }
+        
+        present(battlefieldNavigationController, animated: true, completion: nil)
     }
 }

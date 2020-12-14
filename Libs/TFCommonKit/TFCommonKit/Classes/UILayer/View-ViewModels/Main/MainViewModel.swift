@@ -26,5 +26,7 @@ extension MainViewModel: GoToBattlefieldNavigator {
         viewSubject.onNext(.battlefield)
     }
     
-    // TODO: add remove action
+    public func dismissBattlefield() {
+        viewSubject.onNext(.mainNavigationController)
+    }
 }

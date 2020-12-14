@@ -24,9 +24,11 @@ public class MainNavigationDependenciesContainer {
         }
         
         func makeListViewModel(transformerDataRepository: TransformersDataRepositoryProtocol,
+                               battlefieldNavigator: GoToBattlefieldNavigator,
                                addScreenResponder: AddScreenResponder) -> ListViewModel {
             
             return ListViewModel(transformerDataRepository: transformerDataRepository,
+                                 battlefieldNavigator: battlefieldNavigator,
                                  addScreenResponder: addScreenResponder)
         }
         
@@ -34,6 +36,7 @@ public class MainNavigationDependenciesContainer {
         self.sharedMainViewModel = appDependencyContainer.sharedMainViewModel
         self.sharedMainNavigationViewModel = makeMainNavigationViewModel(goToBattlefieldNavigator: sharedMainViewModel)
         self.sharedListViewModel = makeListViewModel(transformerDataRepository: sharedTransformersDataRepository,
+                                                     battlefieldNavigator: sharedMainViewModel,
                                                      addScreenResponder: sharedMainNavigationViewModel)
     }
 }
@@ -101,5 +104,12 @@ extension MainNavigationDependenciesContainer: AddViewModelFactory {
         let addViewController = makeAddViewController(transformer: transformer)
         
         return AddNavigationController(viewModel: viewModel, addViewController: addViewController)
+    }
+}
+
+// MARK: - BattlefieldResponder
+extension MainNavigationDependenciesContainer: BattlefieldResponder {
+    public func transformersForBattle() -> [TransformerData] {
+        sharedListViewModel.allTransformers()
     }
 }
