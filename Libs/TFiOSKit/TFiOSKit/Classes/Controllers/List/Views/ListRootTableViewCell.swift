@@ -28,6 +28,7 @@ class ListRootTableViewCell: UITableViewCell {
     }
     
     func set(_ transformer: TransformerData) {
+        var transformer = transformer
         iconImageView.kf.setImage(with: transformer.teamIcon)
         nameLabel.text = transformer.name
         strengthLabel.text = String(transformer.strength)

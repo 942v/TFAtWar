@@ -10,4 +10,5 @@ import Foundation
 public protocol GoToBattlefieldNavigator: AnyObject {
     
     func navigateToBattlefield()
+    func dismissBattlefield()
 }

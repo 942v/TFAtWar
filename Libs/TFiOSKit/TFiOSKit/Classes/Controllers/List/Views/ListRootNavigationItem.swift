@@ -37,7 +37,7 @@ class ListRootNavigationItem: UINavigationItem {
 // MARK: - Actions
 extension ListRootNavigationItem {
     @IBAction func doBattleAction(_ sender: Any) {
-//        viewModel.didFinishAddingRadios()
+        viewModel.showBattlefield()
     }
     
     @IBAction func doRefreshAction(_ sender: Any) {

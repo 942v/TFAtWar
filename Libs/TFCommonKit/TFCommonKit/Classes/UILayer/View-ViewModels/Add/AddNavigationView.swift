@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import TFData
 
 public enum AddNavigationView {
     case form

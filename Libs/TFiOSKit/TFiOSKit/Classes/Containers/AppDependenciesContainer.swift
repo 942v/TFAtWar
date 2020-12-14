@@ -52,9 +52,11 @@ extension AppDependenciesContainer {
         
         let viewModel = sharedMainViewModel
         let mainNavigationControllerFactory = makeMainNavigationController
+        let battlefieldNavigationControllerFactory = makeBattlefieldNavigationController
         
         let mainViewController = MainViewController(viewModel: viewModel,
-                                                    mainNavigationControllerFactory: mainNavigationControllerFactory)
+                                                    mainNavigationControllerFactory: mainNavigationControllerFactory,
+                                                    battlefieldNavigationControllerFactory: battlefieldNavigationControllerFactory)
         
         return mainViewController
     }
@@ -65,5 +67,38 @@ extension AppDependenciesContainer {
     func makeMainNavigationController() -> MainNavigationController {
         let mainNavigationDependenciesContainer = MainNavigationDependenciesContainer(appDependencyContainer: self)
         return mainNavigationDependenciesContainer.makeMainNavigationController()
+    }
+}
+
+// MARK: - Battlefield navigation
+extension AppDependenciesContainer {
+    func makeBattlefieldNavigationController() -> BattlefieldNavigationController {
+        let viewModel = makeBattlefieldNavigationViewModel()
+        let battlefieldViewController = makeBattlefieldViewController()
+        
+        let battlefieldNavigationController = BattlefieldNavigationController(viewModel: viewModel,
+                                                                              battlefieldViewController: battlefieldViewController)
+        
+        return battlefieldNavigationController
+    }
+    
+    func makeBattlefieldNavigationViewModel() -> BattlefieldNavigationViewModel {
+        return BattlefieldNavigationViewModel()
+    }
+    
+    func makeBattlefieldViewModel() -> BattlefieldViewModel {
+        let mainViewModel = sharedMainViewModel
+        return BattlefieldViewModel(battlefieldNavigator: mainViewModel)
+    }
+    
+    func makeBattlefieldViewController() -> BattlefieldViewController {
+        
+        let battlefieldViewController = BattlefieldViewController.instantiate(from: .battelfieldStoryboard, framework: "TFiOSKit")
+        
+        let viewModel = makeBattlefieldViewModel()
+        
+        battlefieldViewController.inject(viewModel: viewModel)
+        
+        return battlefieldViewController
     }
 }

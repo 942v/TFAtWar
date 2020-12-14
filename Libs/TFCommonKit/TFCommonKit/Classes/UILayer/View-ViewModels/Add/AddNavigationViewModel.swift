@@ -6,7 +6,6 @@
 //
 
 import RxSwift
-import TFData
 
 public typealias AddNavigationAction = NavigationAction<AddNavigationView>
 

@@ -12,6 +12,7 @@ public class ListViewModel {
     
     // MARK: - Properties
     private unowned let transformerDataRepository: TransformersDataRepositoryProtocol
+    private unowned let battlefieldNavigator: GoToBattlefieldNavigator
     private unowned let addScreenResponder: AddScreenResponder
     
     // MARK: State
@@ -24,8 +25,10 @@ public class ListViewModel {
     
     // MARK: - Init
     public init(transformerDataRepository: TransformersDataRepositoryProtocol,
+                battlefieldNavigator: GoToBattlefieldNavigator,
                 addScreenResponder: AddScreenResponder) {
         self.transformerDataRepository = transformerDataRepository
+        self.battlefieldNavigator = battlefieldNavigator
         self.addScreenResponder = addScreenResponder
     }
 }
@@ -93,6 +96,13 @@ private extension ListViewModel {
     
     private func showError(error: ErrorMessage) {
         self.viewSubject.onNext(.failure(error: error))
+    }
+}
+
+// MARK: - 
+extension ListViewModel {
+    public func showBattlefield() {
+        battlefieldNavigator.navigateToBattlefield()
     }
 }
 
