@@ -24,8 +24,13 @@ class BattleField {
     private var autobot: TransformerData?
     private var decepticon: TransformerData?
     
+    /**
+     Sets the palyers to battle
+     - Parameter autobot: Autobot player
+     - Parameter decepticon: Decepticon player
+     */
     func setPlayers(autobot: TransformerData,
-                       decepticon: TransformerData) {
+                    decepticon: TransformerData) {
         self.autobot = autobot
         self.decepticon = decepticon
     }
@@ -33,6 +38,10 @@ class BattleField {
 
 extension BattleField {
     
+    /**
+     Starts the fight between players
+     - Returns: a `result` and the actual `winner`as an optional. If the `result` is not .winner then no `winner` will be returned
+     */
     public func fight() -> (result: Result, winner: TransformerData?) {
         
         guard var autobot = autobot,
@@ -86,7 +95,7 @@ extension BattleField {
     }
     
     func winnerByFear(autobot: TransformerData,
-                              decepticon: TransformerData) -> TransformerData? {
+                      decepticon: TransformerData) -> TransformerData? {
         
         //If any fighter is down 4 or more points of courage and 3 or more points of strength
         //compared to their opponent, the opponent automatically wins the face-off regardless of
@@ -124,7 +133,7 @@ extension BattleField {
     }
     
     func winnerBySkills(autobot: TransformerData,
-                                decepticon: TransformerData) -> TransformerData? {
+                        decepticon: TransformerData) -> TransformerData? {
         
         //Otherwise, if one of the fighters is 3 or more points of skill above their opponent, they
         //win the fight regardless of overall rating
