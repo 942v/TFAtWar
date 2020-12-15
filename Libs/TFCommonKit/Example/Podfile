@@ -6,6 +6,7 @@ target 'TFCommonKit_Example' do
   pod 'TFCommonKit', :path => '../'
   
   pod 'TFData', :path => '../../TFData/'
+  pod 'TFWarEngine', :path => '../../TFWarEngine/'
 
   target 'TFCommonKit_Tests' do
     inherit! :search_paths

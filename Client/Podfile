@@ -8,7 +8,10 @@ target 'TFAtWar' do
   pod 'TFCommonKit', :path => "../Libs/TFCommonKit", :preserve_pod_file_structure => true
   pod 'TFData', :path => "../Libs/TFData", :preserve_pod_file_structure => true
   pod 'TFiOSKit', :path => "../Libs/TFiOSKit", :preserve_pod_file_structure => true
-  pod 'TFWarEngine', :path => "../Libs/TFWarEngine", :preserve_pod_file_structure => true, :testspecs => ['TFWarEngineTests'] 
+  pod 'TFWarEngine', :path => "../Libs/TFWarEngine", :preserve_pod_file_structure => true, :testspecs => ['TFWarEngineTests']
+  
+  # We ignore 3rd party warnings 
+  pod 'PromiseKit', :inhibit_warnings => true
 
   # Pods for TFAtWar
 
@@ -21,4 +24,12 @@ target 'TFAtWar' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+        end
+    end
 end

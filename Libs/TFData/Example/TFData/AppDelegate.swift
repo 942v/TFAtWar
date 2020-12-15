@@ -8,64 +8,13 @@
 
 import UIKit
 
-import PromiseKit
-import TFData
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    let api = TransformersDataRemoteAPI()
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let transformersDataRemoteAPI = TransformersDataRemoteAPI()
-        let dataRepository = TransformersDataRepository(transformersDataRemoteAPI: transformersDataRemoteAPI)
-        
-        let request = TransformerRequest(name: "942v",
-                                         strength: 1,
-                                         intelligence: 1,
-                                         speed: 1,
-                                         endurance: 1,
-                                         rank: 1,
-                                         courage: 1,
-                                         firepower: 1,
-                                         skill: 1,
-                                         team: .autobot)
-        
-        dataRepository.create(request).done { createdTransformer in
-            let transformer = TransformerRequest(id: createdTransformer.id,
-                                                 name: "942v2",
-                                                 strength: createdTransformer.strength,
-                                                 intelligence: createdTransformer.intelligence,
-                                                 speed: createdTransformer.speed,
-                                                 endurance: createdTransformer.endurance,
-                                                 rank: createdTransformer.rank,
-                                                 courage: createdTransformer.courage,
-                                                 firepower: createdTransformer.firepower,
-                                                 skill: createdTransformer.skill,
-                                                 team: createdTransformer.team)
-            
-            firstly {
-                dataRepository.change(transformer)
-            }.then { _ in
-                dataRepository.getTransformers()
-            }.done { list in
-                print("Finish! \(list)")
-            }.catch {
-                guard let error = $0 as? RemoteAPIError else {
-                    return
-                }
-                print("Error: \(error.description)")
-            }
-        }.catch {
-            guard let error = $0 as? RemoteAPIError else {
-                return
-            }
-            print("Error: \(error.description)")
-        }
         
         return true
     }
