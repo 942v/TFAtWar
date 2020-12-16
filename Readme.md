@@ -3,7 +3,7 @@
 The Transformers are at war and you are in charge of settling the score! This application evaluates who wins a fight between the Autobots and the Decepticons.
 
 Wanna know more? 
-Watch this [videol](https://www.youtube.com/watch?v=nLS2N9mHWaw)
+Watch this [video](https://www.youtube.com/watch?v=nLS2N9mHWaw)
 
 Really fun weekend project! 
 
@@ -52,8 +52,6 @@ Really fun weekend project!
 - You have Xcode installed :P
 
 ## Unit Tests
-To run them you can do it in the client project or in the lib project.
-
 - [x] WarEngine 
 - [ ] ViewModels
 
