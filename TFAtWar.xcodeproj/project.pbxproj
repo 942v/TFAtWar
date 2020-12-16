@@ -362,10 +362,8 @@
 		2721AC842589B51600339A28 /* View-ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2721AC8A2589B51600339A28 /* Navigation */,
 				2721AC952589B51600339A28 /* Main */,
-				2721AC922589B51600339A28 /* List */,
-				2721AC8D2589B51600339A28 /* Add */,
+				2721AD3B2589C26000339A28 /* InitialFlow */,
 				2721AC852589B51600339A28 /* Battlefield */,
 			);
 			path = "View-ViewModels";
@@ -458,8 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				2721ACA12589B51600339A28 /* Persistance */,
-				2721ACA62589B51600339A28 /* Data */,
 				2721ACA92589B51600339A28 /* Remote */,
+				2721ACA62589B51600339A28 /* Data */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -536,6 +534,16 @@
 				27E7C2722583B2A90022CFAF /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		2721AD3B2589C26000339A28 /* InitialFlow */ = {
+			isa = PBXGroup;
+			children = (
+				2721AC8A2589B51600339A28 /* Navigation */,
+				2721AC922589B51600339A28 /* List */,
+				2721AC8D2589B51600339A28 /* Add */,
+			);
+			path = InitialFlow;
 			sourceTree = "<group>";
 		};
 		27E7C25D2583B2A80022CFAF = {
