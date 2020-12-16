@@ -1,0 +1,6 @@
+framework module PATools {
+  umbrella header "PATools-umbrella.h"
+
+  export *
+  module * { export * }
+}
