@@ -247,11 +247,11 @@
 		2721AC5E2589B51600339A28 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2721AC5F2589B51600339A28 /* Battlefield */,
 				2721AC662589B51600339A28 /* Navigation */,
-				2721AC682589B51600339A28 /* Add */,
-				2721AC742589B51600339A28 /* List */,
 				2721AC7D2589B51600339A28 /* Main */,
+				2721AC742589B51600339A28 /* List */,
+				2721AC682589B51600339A28 /* Add */,
+				2721AC5F2589B51600339A28 /* Battlefield */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -384,11 +384,11 @@
 		2721AC842589B51600339A28 /* View-ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2721AC852589B51600339A28 /* Battlefield */,
 				2721AC8A2589B51600339A28 /* Navigation */,
-				2721AC8D2589B51600339A28 /* Add */,
-				2721AC922589B51600339A28 /* List */,
 				2721AC952589B51600339A28 /* Main */,
+				2721AC922589B51600339A28 /* List */,
+				2721AC8D2589B51600339A28 /* Add */,
+				2721AC852589B51600339A28 /* Battlefield */,
 			);
 			path = "View-ViewModels";
 			sourceTree = "<group>";
@@ -489,8 +489,8 @@
 		2721ACA12589B51600339A28 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				2721ACA22589B51600339A28 /* UserDefaults */,
 				2721ACA52589B51600339A28 /* TransformersDataStoreProtocol.swift */,
+				2721ACA22589B51600339A28 /* UserDefaults */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -507,8 +507,8 @@
 		2721ACA62589B51600339A28 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2721ACA72589B51600339A28 /* TransformersDataRepository.swift */,
 				2721ACA82589B51600339A28 /* TransformersDataRepositoryProtocol.swift */,
+				2721ACA72589B51600339A28 /* TransformersDataRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -516,8 +516,8 @@
 		2721ACA92589B51600339A28 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				2721ACAE2589B51600339A28 /* TransformersDataRemoteAPIProtocol.swift */,
 				2721ACAA2589B51600339A28 /* Implementations */,
-				2721ACAD2589B51600339A28 /* Protocols */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -529,14 +529,6 @@
 				2721ACAC2589B51600339A28 /* RemoteAPIError.swift */,
 			);
 			path = Implementations;
-			sourceTree = "<group>";
-		};
-		2721ACAD2589B51600339A28 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				2721ACAE2589B51600339A28 /* TransformersDataRemoteAPIProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		2721ACAF2589B51600339A28 /* Model */ = {
