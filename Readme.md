@@ -8,7 +8,7 @@ Watch this [videol](https://www.youtube.com/watch?v=nLS2N9mHWaw)
 Really fun weekend project! 
 
 ## Setup
-This project is devided in 4 project-libraries and 1 client project.
+This project is divided in 4 project-libraries and 1 client project.
 Uses cocoapods as dependency manager.
 In order to be able to run it you need to do a pod install on the client folder.
 Once the pod install has ended you can open the TFAtWar.xcworkspace
