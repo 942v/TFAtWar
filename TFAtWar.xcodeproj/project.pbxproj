@@ -71,22 +71,12 @@
 		27E7C26A2583B2A80022CFAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C2692583B2A80022CFAF /* AppDelegate.swift */; };
 		27E7C2732583B2A90022CFAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E7C2722583B2A90022CFAF /* Assets.xcassets */; };
 		27E7C2762583B2A90022CFAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E7C2742583B2A90022CFAF /* LaunchScreen.storyboard */; };
-		27E7C2812583B2A90022CFAF /* TFAtWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C2802583B2A90022CFAF /* TFAtWarTests.swift */; };
-		27E7C28C2583B2A90022CFAF /* TFAtWarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7C28B2583B2A90022CFAF /* TFAtWarUITests.swift */; };
 		B9909EBF33132A4158956831 /* Pods_TFAtWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93291BBF9E344E9F99427B /* Pods_TFAtWar.framework */; };
 		D4A1D70F1EAC417CF1A96B99 /* Pods_TFAtWarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D1C734CBEC3A973032FF1A /* Pods_TFAtWarTests.framework */; };
-		E048D4324657B9DA88BE5F0A /* Pods_TFAtWar_TFAtWarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C85FC0237FC58A4759DC8DD /* Pods_TFAtWar_TFAtWarUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		27E7C27D2583B2A90022CFAF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 27E7C25E2583B2A80022CFAF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 27E7C2652583B2A80022CFAF;
-			remoteInfo = TFAtWar;
-		};
-		27E7C2882583B2A90022CFAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27E7C25E2583B2A80022CFAF /* Project object */;
 			proxyType = 1;
@@ -166,11 +156,7 @@
 		27E7C2752583B2A90022CFAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27E7C2772583B2A90022CFAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E7C27C2583B2A90022CFAF /* TFAtWarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFAtWarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27E7C2802583B2A90022CFAF /* TFAtWarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFAtWarTests.swift; sourceTree = "<group>"; };
 		27E7C2822583B2A90022CFAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27E7C2872583B2A90022CFAF /* TFAtWarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFAtWarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27E7C28B2583B2A90022CFAF /* TFAtWarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFAtWarUITests.swift; sourceTree = "<group>"; };
-		27E7C28D2583B2A90022CFAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32F332E6E9839E122A322CEF /* Pods-TFAtWarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWarTests.debug.xcconfig"; path = "Target Support Files/Pods-TFAtWarTests/Pods-TFAtWarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FE58E44BCC00421D324C76E /* Pods-TFAtWar-TFAtWarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFAtWar-TFAtWarUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFAtWar-TFAtWarUITests/Pods-TFAtWar-TFAtWarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		72D1C734CBEC3A973032FF1A /* Pods_TFAtWarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFAtWarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,14 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A1D70F1EAC417CF1A96B99 /* Pods_TFAtWarTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27E7C2842583B2A90022CFAF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E048D4324657B9DA88BE5F0A /* Pods_TFAtWar_TFAtWarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +543,6 @@
 			children = (
 				27E7C2682583B2A80022CFAF /* TFAtWar */,
 				27E7C27F2583B2A90022CFAF /* TFAtWarTests */,
-				27E7C28A2583B2A90022CFAF /* TFAtWarUITests */,
 				27E7C2672583B2A80022CFAF /* Products */,
 				5529B028CC779642E5EE7BF7 /* Pods */,
 				5E5A8FB38D03AA115718B3FF /* Frameworks */,
@@ -577,7 +554,6 @@
 			children = (
 				27E7C2662583B2A80022CFAF /* TFAtWar.app */,
 				27E7C27C2583B2A90022CFAF /* TFAtWarTests.xctest */,
-				27E7C2872583B2A90022CFAF /* TFAtWarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -598,21 +574,11 @@
 		27E7C27F2583B2A90022CFAF /* TFAtWarTests */ = {
 			isa = PBXGroup;
 			children = (
-				27E7C2802583B2A90022CFAF /* TFAtWarTests.swift */,
 				2721AC4C2589B50700339A28 /* BattlefieldTests.swift */,
 				2721AC4B2589B50700339A28 /* WarEngineTests.swift */,
 				27E7C2822583B2A90022CFAF /* Info.plist */,
 			);
 			path = TFAtWarTests;
-			sourceTree = "<group>";
-		};
-		27E7C28A2583B2A90022CFAF /* TFAtWarUITests */ = {
-			isa = PBXGroup;
-			children = (
-				27E7C28B2583B2A90022CFAF /* TFAtWarUITests.swift */,
-				27E7C28D2583B2A90022CFAF /* Info.plist */,
-			);
-			path = TFAtWarUITests;
 			sourceTree = "<group>";
 		};
 		5529B028CC779642E5EE7BF7 /* Pods */ = {
@@ -678,25 +644,6 @@
 			productReference = 27E7C27C2583B2A90022CFAF /* TFAtWarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		27E7C2862583B2A90022CFAF /* TFAtWarUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27E7C2962583B2A90022CFAF /* Build configuration list for PBXNativeTarget "TFAtWarUITests" */;
-			buildPhases = (
-				84F692100151D3F207B541D4 /* [CP] Check Pods Manifest.lock */,
-				27E7C2832583B2A90022CFAF /* Sources */,
-				27E7C2842583B2A90022CFAF /* Frameworks */,
-				27E7C2852583B2A90022CFAF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				27E7C2892583B2A90022CFAF /* PBXTargetDependency */,
-			);
-			name = TFAtWarUITests;
-			productName = TFAtWarUITests;
-			productReference = 27E7C2872583B2A90022CFAF /* TFAtWarUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -712,10 +659,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					27E7C27B2583B2A90022CFAF = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 27E7C2652583B2A80022CFAF;
-					};
-					27E7C2862583B2A90022CFAF = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 27E7C2652583B2A80022CFAF;
 					};
@@ -736,7 +679,6 @@
 			targets = (
 				27E7C2652583B2A80022CFAF /* TFAtWar */,
 				27E7C27B2583B2A90022CFAF /* TFAtWarTests */,
-				27E7C2862583B2A90022CFAF /* TFAtWarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -755,13 +697,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		27E7C27A2583B2A90022CFAF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27E7C2852583B2A90022CFAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -787,28 +722,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TFAtWar-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84F692100151D3F207B541D4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TFAtWar-TFAtWarUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -910,15 +823,6 @@
 			files = (
 				2721AC4E2589B50700339A28 /* BattlefieldTests.swift in Sources */,
 				2721AC4D2589B50700339A28 /* WarEngineTests.swift in Sources */,
-				27E7C2812583B2A90022CFAF /* TFAtWarTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27E7C2832583B2A90022CFAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27E7C28C2583B2A90022CFAF /* TFAtWarUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,11 +833,6 @@
 			isa = PBXTargetDependency;
 			target = 27E7C2652583B2A80022CFAF /* TFAtWar */;
 			targetProxy = 27E7C27D2583B2A90022CFAF /* PBXContainerItemProxy */;
-		};
-		27E7C2892583B2A90022CFAF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 27E7C2652583B2A80022CFAF /* TFAtWar */;
-			targetProxy = 27E7C2882583B2A90022CFAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1153,48 +1052,6 @@
 			};
 			name = Release;
 		};
-		27E7C2972583B2A90022CFAF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FE58E44BCC00421D324C76E /* Pods-TFAtWar-TFAtWarUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AU3J78BE58;
-				INFOPLIST_FILE = TFAtWarUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gs.TFAtWarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TFAtWar;
-			};
-			name = Debug;
-		};
-		27E7C2982583B2A90022CFAF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97D01E4449DE9EF64B71FC57 /* Pods-TFAtWar-TFAtWarUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AU3J78BE58;
-				INFOPLIST_FILE = TFAtWarUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gs.TFAtWarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TFAtWar;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1221,15 +1078,6 @@
 			buildConfigurations = (
 				27E7C2942583B2A90022CFAF /* Debug */,
 				27E7C2952583B2A90022CFAF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27E7C2962583B2A90022CFAF /* Build configuration list for PBXNativeTarget "TFAtWarUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27E7C2972583B2A90022CFAF /* Debug */,
-				27E7C2982583B2A90022CFAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

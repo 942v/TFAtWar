@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import TFAtWar
+
 class WarEngineTests: XCTestCase {
     
     var sut: WarEngine!

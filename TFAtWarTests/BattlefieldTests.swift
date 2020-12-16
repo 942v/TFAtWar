@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import TFAtWar
+
 class BattlefieldTests: XCTestCase {
     
     var sut: BattleField!
